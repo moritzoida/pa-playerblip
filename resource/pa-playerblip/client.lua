@@ -5,7 +5,6 @@ local blipsEnabled = false
 local updateInterval = 500
 local smoothFactor = 0.01
 
--- Toggle Command
 RegisterCommand("playerblip", function()
     ESX.TriggerServerCallback('playerblips:canUse', function(allowed)
         if not allowed then
@@ -33,7 +32,6 @@ function removeAllBlips()
     blipTargets = {}
 end
 
--- Update Blip-Ziele vom Server
 CreateThread(function()
     while true do
         Wait(updateInterval)
@@ -43,7 +41,6 @@ CreateThread(function()
     end
 end)
 
--- Smooth-Movement der Blips
 CreateThread(function()
     while true do
         Wait(0)
